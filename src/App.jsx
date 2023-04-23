@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import CarouselView from './components/Carousel.jsx'
+import Header from './components/Header.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
+      <Header/>
+      <CarouselView/>
     </div>
   )
 }
