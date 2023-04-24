@@ -26,7 +26,6 @@ const Products = () => {
           setListProducts(DataProducts);
 
         })
-      console.log('listProducts', listProducts)
   }, []);
 
   return (

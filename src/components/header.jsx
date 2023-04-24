@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import logo from "../assets/img/logo.svg";
 import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
 import useContextProvider from "../hooks/useContextProvider.jsx";
-import Products from './products/Products';
 const Header = () => {
   const { products } = useContextProvider();
   return (
