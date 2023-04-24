@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/img/logo.svg";
 import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
+import useContextProvider from "../hooks/useContextProvider.jsx";
+import Products from './products/Products';
 const Header = () => {
+  const { products } = useContextProvider();
   return (
     <div className="container">
-      <div className="d-flex justify-content-around align-items-baseline my-5">
+      <div className="d-flex justify-content-between align-items-baseline my-5">
         <div>
           <img src={logo} />
         </div>
         <div className="d-flex w-50 justify-content-center align-items-center text-body">
-          <FormControl className="w-100" sx={{ m: 1, width: "25ch" }} variant="standard">
+          <FormControl
+            className="w-100"
+            sx={{ m: 1, width: "25ch" }}
+            variant="standard"
+          >
             <InputLabel>¿Que estás buscando ?</InputLabel>
 
             <Input
@@ -38,12 +45,16 @@ const Header = () => {
             className="bi bi-cart4  mx-1"
             style={{ fontSize: "1.5rem", color: "black" }}
           />
-          <div
-            className="text-bg-danger p-2 d-flex rounded-circle justify-content-center align-items-center "
-            style={{ width: "25px", height: "25px" }}
-          >
-            1
-          </div>
+          {products > 0 ? (
+            <div
+              className="text-bg-danger p-2 d-flex rounded-circle justify-content-center align-items-center "
+              style={{ width: "25px", height: "25px" }}
+            >
+              {products}
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
